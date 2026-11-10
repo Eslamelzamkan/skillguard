@@ -33,7 +33,7 @@ As autonomous coding agents adopt the `SKILL.md` paradigm, developers are writin
 ### Installation
 
 ```bash
-pip install skillguard
+pip install skillguard-lint
 ```
 
 *(Zero dependencies by default. Runs anywhere on Python 3.10+ using only the Python standard library).*
@@ -70,7 +70,7 @@ skillguard dedupe ./skills/
 skillguard dedupe ./skills/ --semantic
 ```
 
-*(To use dense vector semantic embeddings, install the optional extra: `pip install skillguard[semantic]`)*.
+*(To use dense vector semantic embeddings, install the optional extra: `pip install "skillguard-lint[semantic]"`)*.
 
 ### 4. Scaffold a New Production-Ready Skill
 
@@ -110,7 +110,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install skillguard
+      - run: pip install skillguard-lint
       - run: skillguard check ./skills/ --format github
 ```
 
