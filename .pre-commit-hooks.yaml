@@ -1,0 +1,9 @@
+- id: skillguard
+  name: SkillGuard (Agent Skill Security Scanner & Linter)
+  description: Static linter and security scanner for AI Agent Skills (SKILL.md).
+  entry: skillguard check
+  language: python
+  types: [markdown]
+  files: (^|/)SKILL\.md$
+  additional_dependencies: []
+

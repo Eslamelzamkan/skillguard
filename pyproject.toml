@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillguard"
+version = "0.1.0"
+description = "The Static Security Scanner, Linter, and Quality Gate for AI Agent Skills (SKILL.md)"
+readme = "README.md"
+authors = [
+  { name = "Eslam Elzamkan", email = "eslam@example.com" }
+]
+license = { text = "Apache-2.0" }
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Security",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+semantic = ["sentence-transformers>=2.2.0"]
+
+[project.urls]
+Homepage = "https://github.com/eslamelzamkan/skillguard"
+Repository = "https://github.com/eslamelzamkan/skillguard"
+Issues = "https://github.com/eslamelzamkan/skillguard/issues"
+
+[project.scripts]
+skillguard = "skill_forge.cli:main"
+skg = "skill_forge.cli:main"
+skillforge = "skill_forge.cli:main"
+skill-forge = "skill_forge.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

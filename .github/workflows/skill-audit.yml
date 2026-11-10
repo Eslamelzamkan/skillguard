@@ -1,0 +1,30 @@
+name: Skill Quality & Security Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit-skills:
+    name: Audit Agent Skills
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install SkillGuard
+        run: |
+          python -m pip install --upgrade pip
+          pip install .
+
+      - name: Lint and Security Scan Skills
+        run: |
+          skillguard check skills/ --format github
+
