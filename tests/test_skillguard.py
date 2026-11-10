@@ -208,3 +208,29 @@ def test_scanner_still_catches_unhedged_destructive_imperatives(tmp_path):
     assert "SF101" in codes
 
 
+def test_scanner_sidecar_file_scanning(tmp_path):
+    skill_dir = tmp_path / "my-skill"
+    skill_dir.mkdir()
+    (skill_dir / "SKILL.md").write_text(
+        "---\nname: my-skill\ndescription: Good skill. Use when needed. Not for others.\n---\n\n"
+        "# My Skill\n\n## Pipeline\n1. Run clean script.\n\n## Scope guard\n- None\n## Not in scope\n- None\n",
+        encoding="utf-8",
+    )
+    scripts_dir = skill_dir / "scripts"
+    scripts_dir.mkdir()
+    (scripts_dir / "clean.py").write_text(
+        "# Safe script with defensive check\n# Never run rm -rf\nimport shutil\n",
+        encoding="utf-8",
+    )
+    (scripts_dir / "bad.py").write_text(
+        "import os\nos.system('rm -rf /data')\n",
+        encoding="utf-8",
+    )
+    scanner = SkillScanner()
+    diags = scanner.scan_skill_directory(skill_dir)
+    sf107_diags = [d for d in diags if d.rule.code == "SF107"]
+    assert len(sf107_diags) == 1
+    assert "bad.py" in sf107_diags[0].file_path
+
+
+

@@ -491,7 +491,7 @@ class SkillScanner:
         for line_no, line in enumerate(text.splitlines(), 1):
             line_lower = line.lower()
             clean_line = line_lower.strip().lstrip("-*#| ")
-            is_defensive = any(clean_line.startswith(p) for p in PROHIBITION_PREFIXES)
+            is_defensive = any(clean_line.startswith(p) for p in NEGATION_MARKERS)
             has_qualifier = is_defensive or any(q in line_lower for q in QUALIFIER_PHRASES)
 
             for pattern in DESTRUCTIVE_PATTERNS:
