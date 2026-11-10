@@ -480,9 +480,9 @@ class SkillScanner:
     def _scan_sidecar_text(self, text: str, file_path: str) -> List[Diagnostic]:
         """Scans bundled scripts or references for security threats."""
         local_ignores = set(self.ignored_rules)
-        for m in re.finditer(r"<!--\s*skill-forge:\s*ignore\s+([^>]+)-->", text):
+        for m in FILE_IGNORE_PATTERN.finditer(text):
             for code in m.group(1).split(","):
-                local_ignores.add(code.strip())
+                local_ignores.add(code.strip().upper())
 
         if "SF107" in local_ignores:
             return []

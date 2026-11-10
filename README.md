@@ -6,7 +6,7 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-74%20passed-success.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-70%20passed-success.svg)](tests/)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-zero%20(stdlib%20only)-blueviolet.svg)](#zero-dependencies)
 
 *Works seamlessly across **Claude Code**, **Cursor**, **Google Antigravity**, **OpenAI Codex**, and **LangChain DeepAgents**.*

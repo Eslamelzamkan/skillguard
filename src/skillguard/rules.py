@@ -1,4 +1,4 @@
-"""Rule definitions and diagnostics for Skill-Forge."""
+"""Rule definitions and diagnostics for SkillGuard."""
 
 from dataclasses import dataclass
 from enum import Enum

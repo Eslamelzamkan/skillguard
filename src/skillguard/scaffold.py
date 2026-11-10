@@ -41,6 +41,14 @@ description: {description}. Use when {trigger_symptoms}. Not for {out_of_scope}.
 
 def create_skill_scaffold(name: str, target_dir: Path, description: str = "") -> Path:
     """Scaffolds a new skill directory with a compliant SKILL.md."""
+    path_obj = Path(name)
+    if len(path_obj.parts) > 1:
+        if Path(target_dir) == Path("."):
+            target_dir = path_obj.parent
+        else:
+            target_dir = Path(target_dir) / path_obj.parent
+        name = path_obj.name
+
     # Convert name to kebab-case
     clean_name = re.sub(r"[^a-zA-Z0-9]+", "-", name).strip("-").lower()
     title = clean_name.replace("-", " ").title()

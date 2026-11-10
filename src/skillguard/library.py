@@ -37,7 +37,7 @@ class LibraryAuditor:
         if (self.root_dir / "SKILL.md").exists():
             return [self.root_dir]
         for p in sorted(self.root_dir.rglob("SKILL.md")):
-            # Ignore hidden or internal folders like .skill-forge or _versions
+            # Ignore hidden or internal folders like .skillguard, .skill-forge, or _versions
             if not any(part.startswith(".") or part.startswith("_") for part in p.parts):
                 skill_dirs.append(p.parent)
         return skill_dirs

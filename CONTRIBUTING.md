@@ -33,9 +33,9 @@ All diagnostic rules follow a standard identifier format:
 * `SF3xx`: Multi-Skill Library Health & Collisions
 
 ### Steps to Add a Rule:
-1. Register the rule in `src/skill_forge/rules.py` with its code, name, category, severity, summary, description, and remediation advice.
-2. Implement the static detection logic in `src/skill_forge/scanner.py` (or `library.py`).
-3. Add positive and negative test cases in `tests/test_skill_forge.py`.
+1. Register the rule in `src/skillguard/rules.py` with its code, name, category, severity, summary, description, and remediation advice.
+2. Implement the static detection logic in `src/skillguard/scanner.py` (or `library.py`).
+3. Add positive and negative test cases in `tests/test_skillguard.py`.
 4. Ensure all tests pass with `pytest`.
 5. Update the Rule Catalog in `README.md`.
 

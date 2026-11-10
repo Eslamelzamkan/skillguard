@@ -1,4 +1,4 @@
-"""Command-line interface for Skill-Forge."""
+"""Command-line interface for SkillGuard."""
 
 import argparse
 import sys

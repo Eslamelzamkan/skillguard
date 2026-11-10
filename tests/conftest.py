@@ -10,7 +10,7 @@ REFINE_SCRIPTS = REPO_ROOT / "skills" / "forge-refine" / "scripts"
 
 
 def run_cli(script_path, args, cwd=None):
-    """Invoke a Skill-Forge script the same way the organizer's agent would: a
+    """Invoke a skill script the same way the agent would: a
     plain subprocess call, no package imports across skill directories."""
     result = subprocess.run(
         [sys.executable, str(script_path), *args],

@@ -16,9 +16,9 @@ htmlcov/
 
 # Local state & environment
 .env
+.skillguard/
 .skill-forge/
 jobs/
-lab/frozen_library/
 
 # IDE files
 .vscode/
