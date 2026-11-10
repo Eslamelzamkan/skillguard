@@ -34,10 +34,10 @@ Repository = "https://github.com/eslamelzamkan/skillguard"
 Issues = "https://github.com/eslamelzamkan/skillguard/issues"
 
 [project.scripts]
-skillguard = "skill_forge.cli:main"
-skg = "skill_forge.cli:main"
-skillforge = "skill_forge.cli:main"
-skill-forge = "skill_forge.cli:main"
+skillguard = "skillguard.cli:main"
+skg = "skillguard.cli:main"
+skillforge = "skillguard.cli:main"
+skill-forge = "skillguard.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

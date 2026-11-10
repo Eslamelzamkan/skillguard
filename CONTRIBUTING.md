@@ -53,3 +53,4 @@ Every change must maintain SkillGuard's core invariants:
 ## 📜 License
 
 By contributing to SkillGuard, you agree that your contributions will be licensed under the project's [Apache-2.0 License](LICENSE).
+

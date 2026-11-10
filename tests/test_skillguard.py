@@ -2,11 +2,11 @@ import json
 import pytest
 from pathlib import Path
 
-from src.skill_forge.rules import RULES, Severity
-from src.skill_forge.scanner import SkillScanner
-from src.skill_forge.library import LibraryAuditor
-from src.skill_forge.scaffold import create_skill_scaffold
-from src.skill_forge.formatter import format_json, format_github, format_terminal
+from src.skillguard.rules import RULES, Severity
+from src.skillguard.scanner import SkillScanner
+from src.skillguard.library import LibraryAuditor
+from src.skillguard.scaffold import create_skill_scaffold
+from src.skillguard.formatter import format_json, format_github, format_terminal
 
 
 def test_rule_catalog_integrity():
@@ -139,7 +139,7 @@ def test_formatters_output():
     assert "passed" in term.lower()
 
     # Create dummy diagnostic
-    from src.skill_forge.rules import Diagnostic
+    from src.skillguard.rules import Diagnostic
     diag = Diagnostic(rule=RULES["SF101"], file_path="test.md", line=10, snippet="rm -rf /")
     json_out = format_json([diag])
     parsed = json.loads(json_out)
